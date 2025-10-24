@@ -25,6 +25,9 @@ public class Main {
         erakutsiMenua();
     }
 
+    /**
+     * Menua bistaratu Kontsolatik
+     */
     static void erakutsiMenua() {
         System.out.println("===== MENU NAGUSIA =====");
         System.out.println("1. Langileak");
