@@ -2,6 +2,12 @@ package App;
 import java.util.Scanner;
 
 public class Main {
+	
+	/**
+	 * Programa hemendik hasten da
+	 * 
+	 * @param args
+	 */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String user, pass;
