@@ -1,0 +1,7 @@
+FAKTURA
+Bezeroa: javier
+Eskaera zenb.: 1
+Produktu: 2
+Kopurua: 5
+Unitateko prezioa: 5.0 €
+GUZTIRA: 25,00 €

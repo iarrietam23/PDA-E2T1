@@ -15,25 +15,25 @@ public class Main {
 	// Saioa hasteko metodoa (3 erabiltzaile posible)
 	public static boolean saioaHasi() {
 		Scanner sc = new Scanner(System.in);
-		String user, pass;
+		String erabiltzailea, pass;
 
 		// Erabiltzaile eta pasahitzen mapa
 		Map<String, String> erabiltzaileak = new HashMap<>();
-		erabiltzaileak.put("imanol", "1234");
 		erabiltzaileak.put("danel", "abcd");
-		erabiltzaileak.put("ane", "abcd");
+		erabiltzaileak.put("imanol", "abcd");
+		erabiltzaileak.put("ane", "1234");
 
 		boolean ondo = false;
 
 		// Erabiltzaile eta pasahitza zuzena izan arte
 		do {
 			System.out.print("Erabiltzailea: ");
-			user = sc.nextLine().trim().toLowerCase();
+			erabiltzailea = sc.nextLine().trim().toLowerCase();
 			System.out.print("Pasahitza: ");
 			pass = sc.nextLine().trim();
 
-			if (erabiltzaileak.containsKey(user) && erabiltzaileak.get(user).equals(pass)) {
-				System.out.println("Ongi etorri, " + user + "!");
+			if (erabiltzaileak.containsKey(erabiltzailea) && erabiltzaileak.get(erabiltzailea).equals(pass)) {
+				System.out.println("Ongi etorri, " + erabiltzailea + "!");
 				ondo = true;
 			} else {
 				System.out.println("Erabiltzaile edo pasahitz okerra. Saiatu berriro.\n");
@@ -46,7 +46,7 @@ public class Main {
 
 	// Menu nagusia erakusten du
 	public static void erakutsiMenua() {
-		System.out.println("\n===== MENU NAGUSIA =====");
+		System.out.println("\"===== MENU NAGUSIA =====");
 		System.out.println("1. Langileak");
 		System.out.println("2. Bezeroak");
 		System.out.println("3. Saioa Itxi");

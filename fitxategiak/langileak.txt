@@ -1,0 +1,3 @@
+Imanol Arrieta;678901234;2020-03-12; Joseba Andoni
+Ane Landa;678223344;2022-07-05;Joseba Andoni
+Danel Peña;677112233;2021-11-10;Joseba Andoni

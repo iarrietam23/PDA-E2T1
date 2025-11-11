@@ -1,45 +1,82 @@
 package App;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class LangileakMenu {
 
-    // Langileen menua erakusteko metodoa
     public static void erakutsi() {
         Scanner sc = new Scanner(System.in);
-        int aukera;
+        int aukera = 0;
 
-        do {
+        while (aukera != 3) {
             System.out.println("\n=== LANGILEEN MENUA ===");
-            System.out.println("1. Langile baten informazioa kontsultatu");
-            System.out.println("2. Nagusi baten langileen zerrenda erakutsi");
-            System.out.println("3. Atzera joan");
-            System.out.print("Aukeratu zenbakia: ");
-
-            while (!sc.hasNextInt()) {
-                System.out.print("Zenbaki bat idatzi mesedez: ");
-                sc.next();
-            }
+            System.out.println("1. Langile baten informazioa ikusi");
+            System.out.println("2. Nagusi baten langileak ikusi");
+            System.out.println("3. Atzera");
+            System.out.print("Aukeratu: ");
             aukera = sc.nextInt();
-            sc.nextLine(); // salto de línea garbitu
+            sc.nextLine(); // enter garbitzeko
 
-            switch (aukera) {
-                case 1:
-                    System.out.println("\n>> Langile baten informazioa kontsultatzen...");
-                    // hemen fitxategitik edo datu faltsu batzuk erabil daitezke
-                    break;
-                case 2:
-                    System.out.println("\n>> Nagusi baten langileen zerrenda erakusten...");
-                    // hemen beste metodo bat deitu liteke datuak erakusteko
-                    break;
-                case 3:
-                    System.out.println("Atzera bueltatzen...");
-                    return; // menura bueltatu
-                default:
-                    System.out.println("Aukera okerra. Saiatu berriro.");
-                    break;
+            if (aukera == 1) {
+                // Langile baten informazioa erakutsi
+                System.out.print("Idatzi langilearen izena: ");
+                String izena = sc.nextLine();
+
+                try {
+                    Scanner fitx = new Scanner(new File("fitxategiak/langileak.txt"));
+                    boolean aurkitua = false;
+
+                    while (fitx.hasNextLine()) {
+                        String lerroa = fitx.nextLine();
+                        String[] datuak = lerroa.split(";");
+                        if (datuak[0].equalsIgnoreCase(izena)) {
+                            System.out.println("Izena: " + datuak[0]);
+                            System.out.println("Telefonoa: " + datuak[1]);
+                            System.out.println("Alta data: " + datuak[2]);
+                            System.out.println("Nagusia: " + datuak[3]);
+                            aurkitua = true;
+                        }
+                    }
+                    fitx.close();
+
+                    if (!aurkitua) {
+                        System.out.println("Langilea ez da aurkitu.");
+                    }
+
+                } catch (FileNotFoundException e) {
+                    System.out.println("Errorea: fitxategia ez da aurkitu.");
+                }
             }
 
-        } while (true);
+            else if (aukera == 2) {
+                // Nagusi baten langileak erakutsi
+                System.out.print("Idatzi nagusiaren izena: ");
+                String nagusia = sc.nextLine();
+
+                try {
+                    Scanner fitx = new Scanner(new File("fitxategiak/langileak.txt"));
+                    boolean aurkitua = false;
+
+                    System.out.println(nagusia + " nagusiaren langileak:");
+                    while (fitx.hasNextLine()) {
+                        String lerroa = fitx.nextLine();
+                        String[] datuak = lerroa.split(";");
+                        if (datuak[3].equalsIgnoreCase(nagusia)) {
+                            System.out.println("- " + datuak[0]);
+                            aurkitua = true;
+                        }
+                    }
+                    fitx.close();
+
+                    if (!aurkitua) {
+                        System.out.println("Ez da langilerik aurkitu nagusi horrekin.");
+                    }
+
+                } catch (FileNotFoundException e) {
+                    System.out.println("Errorea: fitxategia ez da aurkitu.");
+                }
+            }
+        }
     }
 }
-

@@ -3,48 +3,59 @@ import java.util.Scanner;
 
 public class MenuNagusia {
 
-    // Metodo nagusia menua erakusteko
     public static void hasieratu() {
         Scanner sc = new Scanner(System.in);
-        int aukera;
+        int aukera = 0;
 
-        do {
-            // Menu nagusia
-            System.out.println("\n===== MENU NAGUSIA =====");
+        erakutsiLogoa(); // erakutsi logotipoa
+
+        while (aukera != 3) {
+            System.out.println("\n=== MENUA NAGUSIA ===");
             System.out.println("1. Langileak");
             System.out.println("2. Bezeroak");
-            System.out.println("3. Saioa Itxi");
-            System.out.print("Aukeratu zenbakia: ");
-
-            // Balio zuzena dela egiaztatu
-            while (!sc.hasNextInt()) {
-                System.out.print("Zenbaki bat idatzi mesedez: ");
-                sc.next();
-            }
+            System.out.println("3. Saioa itxi");
+            System.out.print("Aukeratu: ");
             aukera = sc.nextInt();
-            sc.nextLine(); // salto de línea garbitu
+            sc.nextLine(); // enter garbitzeko
 
-            switch (aukera) {
-                case 1:
-                	LangileakMenu.erakutsi(); 
+            if (aukera == 1) {
+                LangileakMenu.erakutsi();
+            } 
+            else if (aukera == 2) {
+                BezeroMenu.erakutsi();
+            } 
+            else if (aukera == 3) {
+                System.out.print("Ziur zaude saioa itxi nahi duzula? (bai/ez): ");
+                String erantzuna = sc.nextLine();
+                if (erantzuna.equalsIgnoreCase("bai")) {
+                    System.out.println("Saioa itxita. Agur!");
                     break;
-                case 2:
-                	BezeroMenu.erakutsi();
-                    break;
-                case 3:
-                    System.out.print("Ziur saioa itxi nahi duzula? (B/E): ");
-                    String erantzuna = sc.nextLine().trim().toLowerCase();
-                    if (erantzuna.equals("B")) {
-                        System.out.println("Saioa itxita. Agur!");
-                        return; // irten programatik
-                    }
-                    break;
-                default:
-                    System.out.println("Aukera okerra. Saiatu berriro.\n");
-                    break;
+                }
             }
+        }
+    }
 
-        } while (true);
-       
+    // Logotipoa erakusten du
+    private static void erakutsiLogoa() {
+        System.out.println("*******");
+        System.out.println(" *****");
+        System.out.println("  ***");
+        System.out.println("   *");
+        System.out.println("  ***");
+        System.out.println(" *****");
+        System.out.println("*******");
+        System.out.println("   *       ");
+        System.out.println("  *  *    ");
+        System.out.println(" *    *      ");
+        System.out.println("*      *       ");
+        System.out.println("********");
+        System.out.println("    *     ");
+        System.out.println("    *     ");
+        System.out.println("    *     ");
+        System.out.println("********");
+        System.out.println("   *       ");
+        System.out.println("  *  *    ");
+        System.out.println(" *    *      ");
+        System.out.println("*      *       ");
     }
 }

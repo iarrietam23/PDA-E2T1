@@ -1,0 +1,3 @@
+Jon Perez;jonperez@email.com;600111222
+Ane Aran;anearan@email.com;600222333
+Ander Olaizola;anderolaizola@email.com;60033344

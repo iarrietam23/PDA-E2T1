@@ -11,8 +11,8 @@ public class Login {
 
         Map<String, String> erabiltzaileak = new HashMap<>();
         erabiltzaileak.put("imanol", "1234");
-        erabiltzaileak.put("maria", "abcd");
-        erabiltzaileak.put("jon", "9999");
+        erabiltzaileak.put("ane", "abcd");
+        erabiltzaileak.put("danel", "9999");
 
         boolean ondo = false;
 
