@@ -1,0 +1,7 @@
+FAKTURA
+Bezeroa: Arkaitz
+Eskaera zenb.: 2
+Produktu: Saguak
+Kopurua: 14
+Unitateko prezioa: 3.25 €
+GUZTIRA: 45,50 €

@@ -1,21 +1,23 @@
 package App;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Login {
 
+    // Saioa hasteko metodoa (3 erabiltzaile posible)
     public static boolean saioaHasi() {
         Scanner sc = new Scanner(System.in);
         String user, pass;
 
+        // Erabiltzaileak eta pasahitzak
         Map<String, String> erabiltzaileak = new HashMap<>();
         erabiltzaileak.put("imanol", "1234");
         erabiltzaileak.put("ane", "abcd");
         erabiltzaileak.put("danel", "9999");
 
         boolean ondo = false;
+        
 
+        // Erabiltzaile eta pasahitza zuzena izan arte
         do {
             System.out.print("Erabiltzailea: ");
             user = sc.nextLine().trim().toLowerCase();
@@ -28,7 +30,6 @@ public class Login {
             } else {
                 System.out.println("Erabiltzaile edo pasahitz okerra. Saiatu berriro.\n");
             }
-
         } while (!ondo);
 
         return true;

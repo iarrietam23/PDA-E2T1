@@ -1,7 +1,7 @@
 FAKTURA
-Bezeroa: javier
+Bezeroa: 	andoni
 Eskaera zenb.: 1
-Produktu: 2
-Kopurua: 5
-Unitateko prezioa: 5.0 €
-GUZTIRA: 25,00 €
+Produktu: teklatua
+Kopurua: 1
+Unitateko prezioa: 2.0 €
+GUZTIRA: 2,00 €
